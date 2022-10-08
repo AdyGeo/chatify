@@ -7,7 +7,7 @@ export default {
     return {
       isTyping: ref(null),
       chatSocket: new WebSocket(
-                'ws://localhost:8000/ws/'
+                'wss://2391-79-118-244-81.ngrok.io/ws/'
                 + this.$route.params.room
                 + '/'
             ),
@@ -33,7 +33,7 @@ export default {
         if(roomname){
           let chatRoom = this.chatrooms.filter(room => room.slug == roomname)[0];
           this.messages = [];
-          const res = await fetch(`http://localhost:8000/api/messagesbyroom/?room=${chatRoom.id}`);
+          const res = await fetch(`https://2391-79-118-244-81.ngrok.io/api/messagesbyroom/?room=${chatRoom.id}`);
           this.messages = await res.json();
         }
 

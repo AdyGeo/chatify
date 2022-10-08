@@ -63,7 +63,7 @@ export default {
     async fetchChatrooms() {
       try {
         this.chatrooms = [];
-        const res = await fetch("http://localhost:8000/api/chatrooms/");
+        const res = await fetch("https://2391-79-118-244-81.ngrok.io/api/chatrooms/");
         this.chatrooms = await res.json();
       } catch (err) {
         this.fetchError = err;
